@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function InputComponent({ label, id, type, setValue, ...props }) {
+export default function InputComponent({ label, id, type, onChange, ...props }) {
     return (
         <>
             <label htmlFor={id}>{label}</label>
-            <input id={id} type={type} name={id} onChange={(event) => setValue(event.target.value)} {...props} />
+            <input id={id} type={type} name={id} onChange={onChange} {...props} />
         </>
     )
 }

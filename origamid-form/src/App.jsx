@@ -5,6 +5,7 @@ import CheckBoxComponent from "./components/Formularios/CheckBoxComponent"
 import InputComponent from "./components/Formularios/InputComponent"
 import RadioComponent from "./components/Formularios/RadioComponent"
 import SelectComponent from "./components/Formularios/SelectComponent"
+import OnblurComponent from "./components/Onblur/OnblurComponent"
 
 function App() {
 
@@ -29,7 +30,10 @@ function App() {
   return (
     <div className="App">
 
-      <form onSubmit={handleSubmit}>
+      <OnblurComponent />
+      
+
+      {/* <form onSubmit={handleSubmit}>
         <h2>Termos</h2>
         <CheckBoxComponent options={["Aceito os termos"]} value={termos} setValue={setTermos} />
         <h2>CheckBox</h2>
@@ -42,7 +46,15 @@ function App() {
         <InputComponent label="Nome" id="nome" type="text" value={nome} setValue={setNome} required />
         <InputComponent label="E-mail" id="email" type="email" value={email} setValue={setEmail} />
         <button type="submit">Enviar</button>
-      </form>
+      </form> */}
+        {/* <InputComponent label="Nome" id="nome" type="nome" value={nome} onChange={setNome} />
+        <InputComponent label="E-mail" id="email" type="email" value={email} onChange={setEmail} /> */}
+        {/* <InputComponent label="E-mail" id="email" type="email" value={email} setValue={setEmail} />
+        <InputComponent label="E-mail" id="email" type="email" value={email} setValue={setEmail} />
+        <InputComponent label="E-mail" id="email" type="email" value={email} setValue={setEmail} />
+        <InputComponent label="E-mail" id="email" type="email" value={email} setValue={setEmail} />
+        <InputComponent label="E-mail" id="email" type="email" value={email} setValue={setEmail} /> */}
+
     </div>
   )
 }
