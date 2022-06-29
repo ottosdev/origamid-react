@@ -2,7 +2,6 @@ import { createContext, useCallback, useContext, useEffect, useState } from "rea
 import { useNavigate } from "react-router-dom"
 import { GET_USER, TOKEN_POST, TOKEN_VALIDATE_POST } from "../api"
 export const UserContext = createContext()
-
 export default function UserStorage({ children }) {
   const [data, setData] = useState()
   const [login, setLogin] = useState(null)
@@ -11,13 +10,13 @@ export default function UserStorage({ children }) {
   const navigate = useNavigate()
 
   async function getUser(token) {
-
     const { url, options } = GET_USER(token)
     const response = await fetch(url, options)
-    const json = await response.json()
+    const json = await response.json();
     setData(json)
     setLogin(true)
   }
+  
 
   async function userLogin(username, password) {
     try {
@@ -44,7 +43,8 @@ export default function UserStorage({ children }) {
     setLoading(false)
     setLogin(true)
     localStorage.removeItem("token")
-    navigate("/login")
+    // navigate("/login")
+    window.location.href = '/login'
   }, [])
 
 
