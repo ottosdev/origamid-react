@@ -3,10 +3,9 @@ import FeedPhotosItems from "./FeedPhotosItems";
 import useFetch from "../../../hooks/useFetch";
 import { PHOTOS_GET } from "../../../api";
 import Error from "../../Error";
-import styles from "./FeedPhotos.module.css"
+import styles from "./FeedPhotos.module.css";
 
-
-export default function FeedPhotos() {
+export default function FeedPhotos({ setModalPhoto }) {
   const { data, error, loading, request } = useFetch();
 
   useEffect(() => {
@@ -24,7 +23,11 @@ export default function FeedPhotos() {
     return (
       <ul className={styles.feed}>
         {data.map((item) => (
-          <FeedPhotosItems photo={item} key={item.id} />
+          <FeedPhotosItems
+            photo={item}
+            key={item.id}
+            setModalPhoto={setModalPhoto}
+          />
         ))}
       </ul>
     );

@@ -9,7 +9,7 @@ import { useState } from "react";
 import useMedia from "../../../hooks/useMedia";
 import { useEffect } from "react";
 export default function UserHeaderNav() {
-  // const [mobile, setMobile] = useState(null)u
+  // const [mobile, setMobile] = useState(null)
   const { logout } = useAuth();
   const mobile = useMedia("(max-width: 40rem)");
   const [mobileMenu, setMobileMenu] = useState(false);
